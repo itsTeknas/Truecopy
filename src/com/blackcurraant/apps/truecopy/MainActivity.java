@@ -1,16 +1,11 @@
 package com.blackcurraant.apps.truecopy;
 
+//this is just a demo activity, has to be entirely rewritten
+
 import android.app.Activity;
 import android.gesture.GestureOverlayView;
 import android.gesture.GestureOverlayView.OnGestureListener;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
 import android.graphics.Path;
-import android.graphics.Region;
-import android.graphics.drawable.ShapeDrawable;
-import android.graphics.drawable.shapes.PathShape;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MotionEvent;
