@@ -15,7 +15,7 @@ public class BitmapGenerator {
 		int exit = 0;
 		
 		
-		Bitmap scr = Bitmap.createBitmap(720, 500, Bitmap.Config.ARGB_8888);
+		Bitmap scr = Bitmap.createBitmap(720, 720, Bitmap.Config.ARGB_8888);
 		Canvas can = new Canvas(scr);
 		Paint paint = new Paint();
 		

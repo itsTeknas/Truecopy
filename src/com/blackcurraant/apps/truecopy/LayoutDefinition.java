@@ -22,8 +22,8 @@ public class LayoutDefinition {
 		this.ycm = ycm;
 		this.linecount = linecount;
 		
-		xpixels = xcm * 100;
-		ypixels = ycm * 100;
+		xpixels = xcm * 40;
+		ypixels = ycm * 40;
 		
 		lineheight = (ypixels - bottommargin - topmargin)/linecount ;
 		

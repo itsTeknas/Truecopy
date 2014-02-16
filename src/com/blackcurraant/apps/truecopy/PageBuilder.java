@@ -2,6 +2,9 @@ package com.blackcurraant.apps.truecopy;
 
 import java.util.ArrayList;
 
+import com.blackcurraant.apps.truecopy.BitmapStore.Case;
+import com.blackcurraant.apps.truecopy.BitmapStore.Connection;
+
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -30,7 +33,8 @@ public class PageBuilder {
 		}
 		
 		int x=0,y=0,i=0;
-		Bitmap b;
+		
+		Bitmap b = BitmapStore.getBitmap('A', Case.UPPER, Connection.CENTRE);
 		int bitmapheight =(int) ( layout.lineheight * (1.50) ) ;
 		//initilize based on layout
 		
@@ -46,7 +50,23 @@ public class PageBuilder {
 				
 				for(Word word : line.Words){
 					
+					char[] chararray = new char[word.toString().length()];
+					chararray = word.toString().toCharArray();
+					
+					for (char c : chararray){
+						b  = BitmapStore.getBitmap(c, Case.UPPER, Connection.CENTRE);
+						b = scaleBitmap(b,bitmapheight);
+						
+						
+						edit.drawBitmap(b, x , y, p);
+						x = x + b.getWidth();
+					}
+					
+					x=x+10;
+					
+					/*
 					word.getFirstChar();
+					
 					b = BitmapGenerator.generateBitmap(new Path());
 					//get right connected
 					b = scaleBitmap(b,bitmapheight);
@@ -80,9 +100,11 @@ public class PageBuilder {
 					if(word.ENDS_WITH_COMMA = true ){
 						//insert comma
 					}
+					*/
 				}
 								
 				y = y + layout.lineheight ;
+				x=0;
 			}
 			i++;
 		}
@@ -97,9 +119,9 @@ public class PageBuilder {
 		
 		float ratio = src.getHeight() / height;
 		
-		Bitmap.createScaledBitmap(src, (int)(src.getWidth()/ratio) , (int) (src.getHeight()/ratio) , false);
+		Bitmap b = Bitmap.createScaledBitmap(src, (int)(src.getWidth()/ratio) , (int) (src.getHeight()/ratio) , false);
 		
-		return null;
+		return b;
 	}
 	
 

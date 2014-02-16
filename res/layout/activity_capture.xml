@@ -1,0 +1,63 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+   >
+
+    <LinearLayout 
+    
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+   >
+    
+     <Button
+              android:id="@+id/build"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="CLEAR"
+              android:onClick="clear" />
+     
+      <Button
+              android:id="@+id/build"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="NEXT"
+              android:onClick="save" />
+      
+      <TextView
+          	
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Current Letter:"
+              android:textSize="18sp"
+              ></TextView>
+       <TextView
+          	  android:id="@+id/letter"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="A"
+              android:textSize="20sp"
+              android:textStyle="bold"
+              ></TextView>
+      
+    
+     </LinearLayout>
+      
+      <android.gesture.GestureOverlayView
+          android:id="@+id/signaturePad"
+          android:layout_width="fill_parent"
+          android:layout_height="fill_parent"
+          android:background="@drawable/letterguide"
+          android:drawingCacheQuality="high"
+          android:eventsInterceptionEnabled="true"
+          android:fadeEnabled="false"
+          android:gestureColor="#000000"
+          android:gestureStrokeLengthThreshold="1.1"
+          android:gestureStrokeType="multiple"
+          android:orientation="vertical" >
+
+      </android.gesture.GestureOverlayView>
+
+</LinearLayout>
